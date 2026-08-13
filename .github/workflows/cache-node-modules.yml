@@ -21,7 +21,7 @@ jobs:
         uses: actions/cache@v6.1.0
         with:
           path: node_modules
-          key: bla-bla-node_modules-12341234-000
+          key: bla-bla-node_modules-12341234-${{ hashFiles('package-lock.json') }}
 
       - name: Install dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
